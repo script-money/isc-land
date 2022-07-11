@@ -1,0 +1,54 @@
+// schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Wallet {
+  address String @id @unique
+  balance Land[]
+  mail   String
+  contact String?
+  isPublic Boolean @default(value: false)
+  updatedAt DateTime @updatedAt
+}
+
+model Land {
+  token_address String
+  token_id      Int     @unique
+  id            String  @id @unique
+  user          String
+  image_url     String
+  x             Int
+  y             Int
+  name          String
+  tier          Int
+  fuels         Int
+  solon         Int
+  carbon        Int
+  region        String
+  crypton       Int
+  silicon       Int
+  elements      Int
+  hydrogen      Int
+  hyperion      Int
+  landmark      String
+  coordinate    String
+  Wallet        Wallet? @relation(fields: [walletAddress], references: [address])
+  walletAddress String?
+  wantToSale    Boolean @default(value: false)
+}
+
+model TotalLands {
+  id       Int      @id @default(autoincrement())
+  total    Int
+  updateAt DateTime @updatedAt
+  t1      Int
+  t2      Int
+  t3      Int
+  t4      Int
+}

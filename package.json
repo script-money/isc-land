@@ -1,0 +1,45 @@
+{
+  "name": "isc-land-check",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "vercel-build": "npx prisma migrate deploy && next build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@headlessui/react": "^1.6.4",
+    "@heroicons/react": "^1.0.6",
+    "@imtbl/core-sdk": "^0.2.2",
+    "@prisma/client": "^3.14.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "next": "12.0.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-markdown": "8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.14",
+    "@types/react": "17.0.38",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.5",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "prisma": "^3.14.0",
+    "tailwindcss": "^3.0.24",
+    "typescript": "4.5.5"
+  },
+  "prettier": {
+    "eslintIntegration": true,
+    "singleQuote": true,
+    "semi": false,
+    "insertPragma": false,
+    "printWidth": 80,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
+  }
+}
